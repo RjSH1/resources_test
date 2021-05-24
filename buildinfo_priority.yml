@@ -1,12 +1,12 @@
 resources:
-  - name: myGitRepo
+  - name: priorityGitRepo
     type: GitRepo
     configuration:
       gitProvider: zGit
       path: RjSH1/resources_test
       branches:
         include: buildinfo
-  - name: newBuildInfo
+  - name: priorityBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: zenArt
@@ -24,9 +24,9 @@ pipelines:
         configuration:
           priority: 6
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo             
         execution:
           onExecute:
             - echo $my_env_var
@@ -36,9 +36,9 @@ pipelines:
         configuration:
           priority: 5
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo            
         execution:
           onExecute:
             - echo $my_env_var
@@ -48,9 +48,9 @@ pipelines:
         configuration:
           priority: 4
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo            
         execution:
           onExecute:
             - echo $my_env_var
@@ -60,9 +60,9 @@ pipelines:
         configuration:
           priority: 3
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo           
         execution:
           onExecute:
             - echo $my_env_var 
@@ -72,9 +72,9 @@ pipelines:
         configuration:
           priority: 2
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo           
         execution:
           onExecute:
             - echo $my_env_var    
@@ -84,9 +84,9 @@ pipelines:
         configuration:
           priority: 1
           inputResources:
-            - name: myGitRepo
+            - name: priorityGitRepo
           outputResources:
-            - name: newBuildInfo             
+            - name: priorityBuildInfo           
         execution:
           onExecute:
             - echo $my_env_var             
