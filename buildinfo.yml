@@ -15,5 +15,6 @@ pipelines:
           dryRun: false
           inputResources:
             - name: myBuildInfo
-          outputResources:
-            - name: myReleaseBundle
+          execution:
+            onExecute:
+              - echo 'Triggered Pipelines'
