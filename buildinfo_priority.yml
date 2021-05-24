@@ -1,0 +1,92 @@
+resources:
+  - name: myGitRepo
+    type: GitRepo
+    configuration:
+      gitProvider: zGit
+      path: RjSH1/resources_test
+      branches:
+        include: buildinfo
+  - name: newBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: zenArt
+      buildName: SampleApp
+      buildNumber: 1          
+pipelines:  
+  - name: priority_pipeline
+    configuration:
+      environmentVariables:
+        readOnly:
+          my_env_var: "hello"  
+    steps:
+      - name: step_1
+        type: Bash
+        configuration:
+        priority: 6
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var
+            
+      - name: step_2
+        type: Bash
+        configuration:
+          priority: 5
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var
+            
+      - name: step_3
+        type: Bash
+        configuration:
+          priority: 4
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var
+            
+      - name: step_4
+        type: Bash
+        configuration:
+          priority: 3
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var 
+            
+      - name: step_5
+        type: Bash
+        configuration:
+          priority: 2
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var    
+            
+      - name: step_6
+        type: Bash
+        configuration:
+          priority: 1
+          inputResources:
+            - name: myGitRepo
+          outputResources:
+            - name: newBuildInfo             
+        execution:
+          onExecute:
+            - echo $my_env_var             
