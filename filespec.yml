@@ -2,7 +2,7 @@ resources:
   - name: 0014_FileSpec
     type: FileSpec
     configuration:
-      sourceArtifactory: s_artifactory
+      sourceArtifactory: zenArt
       pattern: "test-local/setup/"
       recursive: false
       offset: 1@3
