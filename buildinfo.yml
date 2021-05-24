@@ -23,7 +23,7 @@ pipelines:
       - name: step_1
         type: Bash
         configuration:
-          priority: 2
+          priority: 8
           inputResources:
             - name: priorityGitRepo
           outputResources:
@@ -63,6 +63,7 @@ pipelines:
       - name: step_4
         type: Bash
         configuration:
+          priority: 3
           inputSteps:
             - name: step_2
         execution:
@@ -71,6 +72,7 @@ pipelines:
       - name: step_5
         type: Bash
         configuration:
+          priority: 2
           inputSteps:
             - name: step_3
             - name: step_4  
