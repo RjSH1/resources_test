@@ -26,6 +26,7 @@ pipelines:
         configuration:
           inputResources:
             - name: priorityGitRepo
+              trigger: true
           outputResources:
             - name: priorityBuildInfo             
         execution:
