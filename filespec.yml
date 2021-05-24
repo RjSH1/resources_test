@@ -1,5 +1,5 @@
 resources:
-  - name: 0014_FileSpec
+  - name: FileSpec_1
     type: FileSpec
     configuration:
       sourceArtifactory: zenArt
@@ -15,7 +15,7 @@ pipelines:
         configuration:
           nodePool: win_2019
           inputResources:
-            - name: 0014_FileSpec
+            - name: FileSpec_1
         execution:
           onExecute:
             - write-output "executing step..."
