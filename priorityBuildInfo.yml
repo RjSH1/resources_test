@@ -52,6 +52,7 @@ pipelines:
       - name: step_3
         type: Bash
         configuration:
+          priority: 9
           environmentVariables:
             step_env_var1: "hello"
           inputSteps:
@@ -62,6 +63,7 @@ pipelines:
       - name: step_4
         type: Bash
         configuration:
+          priority: 7
           inputSteps:
             - name: step_2
         execution:
@@ -70,6 +72,7 @@ pipelines:
       - name: step_5
         type: Bash
         configuration:
+          priority: 8
           environmentVariables:
             step_env_var1: "hello"
           inputSteps:
@@ -80,6 +83,7 @@ pipelines:
       - name: step_6
         type: Bash
         configuration:
+          priority: 1
           inputSteps:
             - name: step_2
         execution:
