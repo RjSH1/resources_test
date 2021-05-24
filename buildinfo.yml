@@ -1,0 +1,19 @@
+resources:
+  - name: myBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: zenArt
+
+pipelines:
+  - name: createReleaseBundlePipeline
+    steps:
+      - name: createReleaseBundleStep
+        type: CreateReleaseBundle
+        configuration:
+          releaseBundleName: myReleaseBundle
+          releaseBundleVersion: "${run_number}"
+          dryRun: false
+          inputResources:
+            - name: myBuildInfo
+          outputResources:
+            - name: myReleaseBundle
