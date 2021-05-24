@@ -18,10 +18,12 @@ pipelines:
       environmentVariables:
         readOnly:
           my_env_var: "hello"  
+       
     steps:
       - name: step_1
         type: Bash
         configuration:
+          priority: 2
           inputResources:
             - name: myGitRepo
           outputResources:
@@ -35,6 +37,7 @@ pipelines:
       - name: step_2
         type: Bash
         configuration:
+          priority: 1
           inputResources:
             - name: newBuildInfo            
           runtime:
