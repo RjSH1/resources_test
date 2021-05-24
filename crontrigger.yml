@@ -5,8 +5,8 @@ resources:
       interval: '*/5 * * * *'     # Every 5 minutes
 
 pipelines:      
-    - name: pipeline_scheduled_triggers
-    - steps:
+  - name: pipeline_scheduled_triggers
+    steps:
       - name: step_1
         type: Bash
         configuration:
