@@ -14,7 +14,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: zenArt 
+            - name: FileSpec_0007 
               trigger: true
         execution:
           onExecute:
