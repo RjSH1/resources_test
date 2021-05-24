@@ -22,7 +22,7 @@ pipelines:
       - name: step_1
         type: Bash
         configuration:
-        priority: 6
+          priority: 6
           inputResources:
             - name: myGitRepo
           outputResources:
