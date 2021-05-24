@@ -2,7 +2,7 @@ resources:
   - name: FileSpec_0007
     type: FileSpec
     configuration:
-      sourceArtifactory: s_artifactory
+      sourceArtifactory: zenArt
       pattern: "test-local/setup/"
       recursive: false
       archiveEntries: "#/artifactory"
@@ -14,7 +14,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: Aql_ART_2 
+            - name: zenArt 
               trigger: true
         execution:
           onExecute:
