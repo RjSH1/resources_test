@@ -10,10 +10,10 @@ pipelines:
       - name: createReleaseBundleStep
         type: CreateReleaseBundle
         configuration:
-          releaseBundleName: myReleaseBundle
+          releaseBundleName: my
           releaseBundleVersion: "${run_number}"
           dryRun: true
           inputResources:
             - name: myBuildInfo
           outputResources:
-            - name: myReleaseBundle
+            - name: my
