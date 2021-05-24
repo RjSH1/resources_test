@@ -15,7 +15,7 @@ resources:
       buildNumber: 1 
       
 pipelines:  
-  - name: basic_pipeline
+  - name: priority_pipeline
     configuration:
       environmentVariables:
         readOnly:
