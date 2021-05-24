@@ -1,21 +1,19 @@
 resources:
-  - name: FileSpec_0007
+  - name: Get_Files
     type: FileSpec
     configuration:
       sourceArtifactory: zenArt
-      pattern: "test-local/setup/"
-      recursive: false
-      offset: 1@3
-
+      aql: "{'repo': 'docker-local'}"
+    
 pipelines:
-  - name: pipelines_FLSPEC_0007
+  - name: PropertyDemo
     steps:
-      - name: step_FLSPEC_0007
+      - name: ArtifactoryFiles
         type: Bash
         configuration:
           inputResources:
-            - name: FileSpec_0007 
-              trigger: true
+            - name: Get_Files
         execution:
           onExecute:
-            - write-output "executing step..."
+            - cat $HOME/.jfrog/logs/jfrog-cli*
+            - ls
