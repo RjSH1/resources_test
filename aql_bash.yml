@@ -27,7 +27,9 @@ pipelines:
         configuration:
           inputResources:
             - name: Aql_ART_2 
-              trigger: true            
+              trigger: true
+          outputResources:
+            - name: myBuildInfo       
         execution:
           onExecute:
             - echo $my_env_var
