@@ -12,9 +12,8 @@ pipelines:
         configuration:
           releaseBundleName: myReleaseBundle
           releaseBundleVersion: "${run_number}"
-          dryRun: false
+          dryRun: true
           inputResources:
             - name: myBuildInfo
-          execution:
-            onExecute:
-              - echo 'Triggered Pipelines'
+          outputResources:
+            - name: myReleaseBundle
