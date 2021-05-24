@@ -1,5 +1,5 @@
 resources:
-  - name: Aql_ART_1
+  - name: Aql_ART_2
     type: Aql
     configuration:
       sourceArtifactory: zenArt
@@ -16,7 +16,7 @@ resources:
           output: test2
 
 pipelines:
-  - name: pipelines_ART_1
+  - name: pipelines_ART_BASH_2
     configuration:
       environmentVariables:
         readOnly:
@@ -26,7 +26,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: Aql_ART_1  
+            - name: Aql_ART_2 
               trigger: true            
         execution:
           onExecute:
