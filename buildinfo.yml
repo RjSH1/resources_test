@@ -6,7 +6,7 @@ resources:
       path: RjSH1/resources_test
       branches:
         include: buildinfo
-  - name: myBuildInfo
+  - name: newBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: zenArt
@@ -25,18 +25,18 @@ pipelines:
           inputResources:
             - name: myGitRepo
           outputResources:
-            - name: myBuildInfo             
+            - name: newBuildInfo             
         execution:
           onExecute:
             - echo $my_env_var
             - if [ -z $app_version ]; then add_pipeline_variables app_version=1.0.0; else app_version=$(bump_semver $app_version minor); fi
-            - write_output myBuildInfo "buildNumber=$app_version"
+            - write_output newBuildInfo "buildNumber=$app_version"
             - add_run_variables run_var="hello"
       - name: step_2
         type: Bash
         configuration:
           inputResources:
-            - name: myBuildInfo            
+            - name: newBuildInfo            
           runtime:
             type: image
             image:
