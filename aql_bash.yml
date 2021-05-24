@@ -17,7 +17,7 @@ resources:
   - name: myBuildInfo
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: zenArt
       buildName: SampleApp
       buildNumber: 1
 
