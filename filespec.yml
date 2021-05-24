@@ -1,22 +1,21 @@
 resources:
-  - name: S_Bash_0539_FileSpec
+  - name: S_PS_R_FLSPEC_0018
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      aql: '{"items.find":{"name":{"$match":"s_foo"}}}'
-
+      aql: '{"items.find":{"name":{"$match":"s_foo*"}}}'
+      target: 'C:\Users\pipelines\Desktop\'
 pipelines:
-  - name: pipelines_S_Bash_0539
+  - name: pipelines_S_PS_R_FLSPEC_0018
     steps:
-      - name: S_Bash_0539
-        type: Bash
+      - name: S_PS_R_FLSPEC_0018
+        type: PowerShell
         configuration:
+          nodePool: win_2019
           inputResources:
-            - name: S_Bash_0539_FileSpec
+            - name: S_PS_R_FLSPEC_0018
         execution:
           onExecute:
-            - echo "executing step"
-            - pushd $res_S_Bash_0539_FileSpec_resourcePath
-            - if [ -f "./fileSpecBash/s_foo" ]; then echo "found the file"; fi
-            - if [ ! -f "./fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi
-            - popd
+            - write-output "executing step..."
+            - if (Test-Path "C:\Users\pipelines\Desktop\fileSpecPowerShell\s_foo"){ Write-Output "found the file" }
+            - if (!(Test-Path "C:\Users\pipelines\Desktop\fileSpecPowerShell\s_foo")){ Write-Error "error finding the file" -ErrorAction Stop }
