@@ -2,14 +2,14 @@ resources:
   - name: myGitRepo
     type: GitRepo
     configuration:
-      gitProvider: my_github
-      path: jfrog/jfrog-pipelines-simple-example
+      gitProvider: zGit
+      path: RjSH1/resources_test
       branches:
-        include: master
+        include: buildinfo
   - name: myBuildInfo
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: zenArt
       buildName: SampleApp
       buildNumber: 1          
 pipelines:  
@@ -72,8 +72,7 @@ pipelines:
             - name: step_3
             - name: step_4  
           integrations:
-            - name: my_github            
+            - name: zGit            
         execution:
           onExecute:
             - 'curl -H "Authorization: token ${int_my_github_token}" ${int_my_github_url}/rate_limit'
-  
