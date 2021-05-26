@@ -14,4 +14,5 @@ adsf
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-![test](add_template_source_6.png)
+![test](https://github.com/RjSH1/resources_test/blob/master/add_template_source_6.png)
+![test](master/add_template_source_6.png)
