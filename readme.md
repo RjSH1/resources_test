@@ -10,7 +10,7 @@ asd
 fa
 sdf
 adsf
-<img src="add_template_source_6.PNG" width="800"/>
+<img src='add_template_source_6.png' width="800"/>
 
-![test](https://github.com/RjSH1/resources_test/blob/master/add_template_source_6.PNG)
-![test](add_template_source_6.PNG)
+![test](https://github.com/RjSH1/resources_test/blob/master/add_template_source_6.png)
+![test](add_template_source_6.png)
